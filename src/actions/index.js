@@ -1,0 +1,40 @@
+import {
+  fetchCat,
+  FETCH_CAT_REQUEST,
+  FETCH_CAT_SUCCESS,
+  FETCH_CAT_ERROR,
+  adoptCat,
+  ADOPT_CAT_REQUEST,
+  ADOPT_CAT_SUCCESS,
+  ADOPT_CAT_ERROR
+} from './cat';
+import {
+  fetchDog,
+  FETCH_DOG_REQUEST,
+  FETCH_DOG_SUCCESS,
+  FETCH_DOG_ERROR,
+  adoptDog,
+  ADOPT_DOG_REQUEST,
+  ADOPT_DOG_SUCCESS,
+  ADOPT_DOG_ERROR
+} from './dog';
+
+export const actions = {
+  fetchCat,
+  FETCH_CAT_REQUEST,
+  FETCH_CAT_SUCCESS,
+  FETCH_CAT_ERROR,
+  adoptCat,
+  ADOPT_CAT_REQUEST,
+  ADOPT_CAT_SUCCESS,
+  ADOPT_CAT_ERROR,
+  fetchDog,
+  FETCH_DOG_REQUEST,
+  FETCH_DOG_SUCCESS,
+  FETCH_DOG_ERROR,
+  adoptDog,
+  ADOPT_DOG_REQUEST,
+  ADOPT_DOG_SUCCESS,
+  ADOPT_DOG_ERROR
+};
+
