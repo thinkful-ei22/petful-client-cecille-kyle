@@ -21,7 +21,7 @@ export const fetchCat = () => dispatch => {
   console.log('fetching Cat');
   dispatch(fetchCatRequest());
   return (
-    fetch(`${API_BASE_URL}/api/cats`)
+    fetch(`${API_BASE_URL}/cats`)
       .then(res => {
         if (!res.ok) {
           return Promise.reject(res.statusText);
@@ -53,7 +53,7 @@ export const adoptCatError = (error) => ({
 
 export const adoptCat = () => dispatch => {
   dispatch(adoptCatRequest());
-  return fetch(`${API_BASE_URL}/api/cats`, {
+  return fetch(`${API_BASE_URL}/cats`, {
       method: 'DELETE'
     })
     .then(res => {
