@@ -1,3 +1,5 @@
+import { API_BASE_URL } from '../config';
+
 export const FETCH_DOG_REQUEST = 'FETCH_DOG_REQUEST';
 export const fetchDogRequest = () => ({
   type: FETCH_DOG_REQUEST
@@ -17,7 +19,7 @@ export const fetchDogError = (error) => ({
 
 export const fetchDog = () => dispatch => {
   dispatch(fetchDogRequest());
-  return fetch(`localhost:8080/api/dogs`)
+  return fetch(`${API_BASE_URL}/api/dogs`)
     .then(res => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
@@ -48,7 +50,7 @@ export const adoptDogError = (error) => ({
 
 export const adoptDog = () => dispatch => {
   dispatch(adoptDogRequest());
-  return fetch('localhost:8080/api/dogs', {
+  return fetch(`${API_BASE_URL}/api/dogs`, {
       method: 'DELETE'
     })
     .then(res => {

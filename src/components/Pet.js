@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function Pet(props) {
+  console.log('props: ', props);
   const pet = props.petToAdopt;
 
   return (

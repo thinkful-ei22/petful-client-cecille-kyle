@@ -19,7 +19,7 @@ import {
   ADOPT_DOG_ERROR
 } from './dog';
 
-export const actions = {
+export {
   fetchCat,
   FETCH_CAT_REQUEST,
   FETCH_CAT_SUCCESS,
