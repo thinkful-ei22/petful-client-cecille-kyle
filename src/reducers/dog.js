@@ -44,7 +44,7 @@ export const dogReducer = (state=initialState, action) => {
       return Object.assign({}, state, {
         data: null,
         error: null,
-        loading: false
+        loading: true
       })
     }
     case ADOPT_DOG_ERROR: {

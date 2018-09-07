@@ -60,7 +60,7 @@ export const adoptCat = () => dispatch => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
       }
-      return res.json();
+      return res;
     })
     .then(() => {
       dispatch(adoptCatSuccess());

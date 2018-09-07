@@ -1,24 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchCat, fetchDog } from './actions/index.js';
+import { fetchCat, fetchDog, adoptCat, adoptDog } from './actions/index.js';
 import Pet from './components/Pet';
 
 export class Dashboard extends React.Component {
 
-  // cat = this.props.catToAdopt;
-  // dog = this.props.dogToAdopt;
-
+  constructor(props) {
+    super(props);
+    this.onAdoptPet = this.onAdoptPet.bind(this);
+  }
   componentDidMount() {
-    console.log('Dashboard mounted');
     this.props.dispatch(fetchCat());
     this.props.dispatch(fetchDog());
   }
 
-  onAdoptPet(e) {
-    e.preventDefault();
-    console.log('pet adopted!');
-    console.log(e);
+  onAdoptPet(animal) {
+    if (animal === 'cat') {
+      this.props.dispatch(adoptCat());
+    }
+    if (animal === 'dog') {
+      this.props.dispatch(adoptDog());
+    }
   }
 
   render() {
@@ -34,8 +37,8 @@ export class Dashboard extends React.Component {
     if (this.props.catToAdopt && this.props.dogToAdopt) {
       return (
         <div className='dashboard'>
-          <Pet petToAdopt={this.props.catToAdopt} onAdoptPet={this.onAdoptPet} />
-          <Pet petToAdopt={this.props.dogToAdopt} onAdoptPet={this.onAdoptPet} />
+          <Pet petToAdopt={this.props.catToAdopt} animal='cat' onAdoptPet={this.onAdoptPet} />
+          <Pet petToAdopt={this.props.dogToAdopt} animal='dog' onAdoptPet={this.onAdoptPet} />
         </div>
       );
     } else {
